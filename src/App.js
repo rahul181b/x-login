@@ -7,22 +7,23 @@ function App() {
     password: '',
   })
   const [isSubmitted, setIsSubmitted] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState("");
   const handleChange = (e) => {
     setUserInfo((preInfo) => ({ ...preInfo, [e.target.name]: e.target.value }))
-    setError(null)
+
   }
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (userInfo.username.trim() === "" || userInfo.password.trim() === "") {
+      alert("please fill out this field");
+      return;
+    }
 
     if (userInfo.username === "user" && userInfo.password === "password") {
 
       setError("");
       setIsSubmitted(false);
 
-    } else if (userInfo.username.trim() === "" || userInfo.password.trim() === "") {
-      alert("please fill out this field");
-      return;
     }
     else {
       setError("Invalid username or password");
