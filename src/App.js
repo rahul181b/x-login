@@ -31,7 +31,7 @@ function App() {
         <form onSubmit={handleSubmit}>
           {error && <p>{error}</p>}
           <div>
-            <label>
+            <label htmlFor="username" name="username">
               Username:
               <input
                 type="text"
@@ -43,7 +43,7 @@ function App() {
             </label>
           </div>
           <div>
-            <label>
+            <label htmlFor="username" name="username">
               Password:
               <input
                 type="password"
