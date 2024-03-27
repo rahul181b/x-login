@@ -40,13 +40,13 @@ function App() {
           <div>
             <label >
               Username:
-              <input type="text" name="username" value={userInfo.username} onChange={handleChange} />
+              <input type="text" placeholder="username" name="username" value={userInfo.username} onChange={handleChange} />
             </label>
           </div>
           <div>
             <label>
               Password:
-              <input type="password" name="password" value={userInfo.password} onChange={handleChange} />
+              <input type="password" placeholder="password" name="password" value={userInfo.password} onChange={handleChange} />
             </label>
           </div>
           <button type="submit">Submit</button>
