@@ -14,24 +14,19 @@ function App() {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      if (userInfo.username === "user" && userInfo.password === "password") {
 
-        setError("");
-        setIsSubmitted(false);
+    if (userInfo.username === "user" && userInfo.password === "password") {
 
-      } else if (userInfo.username.trim() === "" || userInfo.password.trim() === "") {
-        alert("please fill out this field");
-        return;
-      }
-      else {
-        setError("Invalid username or password");
-        setIsSubmitted(true);
-      }
-    } catch (e) {
+      setError("");
+      setIsSubmitted(false);
 
-      console.log(e)
-
+    } else if (userInfo.username.trim() === "" || userInfo.password.trim() === "") {
+      alert("please fill out this field");
+      return;
+    }
+    else {
+      setError("Invalid username or password");
+      setIsSubmitted(true);
     }
   }
   return (
