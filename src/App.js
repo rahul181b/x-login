@@ -32,10 +32,10 @@ function App() {
   return (
     <div >
       <h1>Login Page</h1>
-      {error && <p>{error}</p>}
+
       {!isSubmitted ? (<div><p>Welcome {userInfo.username}!</p></div>)
         : (<form onSubmit={handleSubmit}>
-
+          {error && <p>{error}</p>}
           <div>
             <label >
               Username:
