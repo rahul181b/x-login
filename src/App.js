@@ -31,28 +31,28 @@ function App() {
         <form onSubmit={handleSubmit}>
           {error && <p>{error}</p>}
           <div>
-            <label htmlFor="username" name="username">
-              Username:
-              <input
-                type="text"
-                placeholder="username"
-                name="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
-            </label>
+            <label htmlFor="username" name="username">Username:</label>
+
+            <input
+              type="text"
+              placeholder="username"
+              name="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+
           </div>
           <div>
-            <label htmlFor="username" name="username">
-              Password:
-              <input
-                type="password"
-                placeholder="password"
-                name="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </label>
+            <label htmlFor="username" name="username">Password:</label>
+
+            <input
+              type="password"
+              placeholder="password"
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+
           </div>
           <button type="submit">Submit</button>
         </form>
