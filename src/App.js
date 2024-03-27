@@ -2,24 +2,19 @@ import React, { useState } from "react";
 import './App.css';
 
 function App() {
-  const [userInfo, setUserInfo] = useState({
-    username: '',
-    password: '',
-  })
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(true);
   const [error, setError] = useState("");
-  const handleChange = (e) => {
-    setUserInfo((preInfo) => ({ ...preInfo, [e.target.name]: e.target.value }))
 
-  }
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (userInfo.username.trim() === "" || userInfo.password.trim() === "") {
+    if (username.trim() === "" || password.trim() === "") {
       alert("please fill out this field");
       return;
     }
 
-    if (userInfo.username === "user" && userInfo.password === "password") {
+    if (username === "user" && password === "password") {
 
       setError("");
       setIsSubmitted(false);
@@ -34,19 +29,19 @@ function App() {
     <div >
       <h1>Login Page</h1>
 
-      {!isSubmitted ? (<div><p>Welcome {userInfo.username}!</p></div>)
+      {!isSubmitted ? (<p>Welcome {username}!</p>)
         : (<form onSubmit={handleSubmit}>
           {error && <p>{error}</p>}
           <div>
             <label >
               Username:
-              <input type="text" placeholder="username" name="username" value={userInfo.username} onChange={handleChange} />
+              <input type="text" placeholder="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} />
             </label>
           </div>
           <div>
             <label>
               Password:
-              <input type="password" placeholder="password" name="password" value={userInfo.password} onChange={handleChange} />
+              <input type="password" placeholder="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
             </label>
           </div>
           <button type="submit">Submit</button>
